@@ -1,0 +1,7 @@
+# MediaTek Helio G85 (poplar) vendor sepolicy file contexts
+/vendor/bin/hw/android\.hardware\.audio\.service-aidl\.mediatek  u:object_r:hal_audio_default_exec:s0
+/vendor/bin/hw/android\.hardware\.bluetooth-service-mediatek    u:object_r:hal_bluetooth_default_exec:s0
+/vendor/bin/hw/android\.hardware\.gnss-service\.mediatek       u:object_r:hal_gnss_default_exec:s0
+/vendor/bin/hw/camerahalserver                                   u:object_r:hal_camera_default_exec:s0
+/vendor/bin/mnld                                                 u:object_r:mnld_exec:s0
+/vendor/bin/teei_daemon                                          u:object_r:teei_daemon_exec:s0
