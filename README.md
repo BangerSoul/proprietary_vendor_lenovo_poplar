@@ -55,12 +55,13 @@ Both `extract-files.sh` and `setup-makefiles.sh` support standard LineageOS `too
 
 ---
 
-## Repository & GitHub Publishing
+## Repository & Integration
 
-- **Remote (`origin`)**: `https://github.com/iamsh/proprietary_vendor_lenovo_poplar.git`
-- **Target Branch**: `lineage-21.0`
+- **Repository**: `https://github.com/BangerSoul/proprietary_vendor_lenovo_poplar`
+- **Remote (`origin`)**: `https://github.com/BangerSoul/proprietary_vendor_lenovo_poplar.git`
+- **Target Branch**: `lineage-21.0` (LineageOS 21.0)
+- **Device Tree**: `https://github.com/BangerSoul/android_device_lenovo_poplar`
 
 ```bash
-git remote -v
-git push -u origin lineage-21.0
+git clone -b lineage-21.0 https://github.com/BangerSoul/proprietary_vendor_lenovo_poplar.git vendor/lenovo/poplar
 ```
