@@ -3,7 +3,7 @@
 #
 # SPDX-License-Identifier: Apache-2.0
 #
-# Authoritative Proprietary Blobs List for Lenovo Tab M9 / M11 (TB311FU - poplar)
+# Authoritative Proprietary Blobs List for Lenovo Tab (TB311FU - poplar)
 # Mined directly from Stock ROM ZUI 17.5.36.508_ST_261024
 #
 
@@ -71,7 +71,6 @@ vendor/firmware/fs1801.fsm
 vendor/etc/AW_DSP.bin
 vendor/etc/AW_SINWAVE_DSP.bin
 vendor/etc/silence.wav
-vendor/etc/audio_policy_configuration.xml
 vendor/etc/audio_policy_configuration_bluetooth_legacy_hal.xml
 vendor/etc/audio_policy_volumes.xml
 vendor/etc/audio_device.xml
@@ -95,8 +94,8 @@ vendor_dlkm/lib/modules/snd-soc-mt6660.ko
 -vendor/lib64/hw/vendor.mediatek.hardware.camera.isphal_aidl@1.0-impl.so;DISABLE_CHECKELF
 -vendor/lib64/hw/vendor.mediatek.hardware.camera.postproc_aidl@1.0-impl.so
 vendor/firmware/lib3a.ccu
--vendor/bin/lib3a.ccu.dm
--vendor/bin/lib3a.ccu.pm
+-vendor/bin/lib3a.ccu.dm;DISABLE_CHECKELF
+-vendor/bin/lib3a.ccu.pm;DISABLE_CHECKELF
 -vendor/lib64/lib3a.ccudrv.so
 -vendor/lib64/lib3a.ccuif.so
 -vendor/lib64/libcameracustom.so;DISABLE_CHECKELF
@@ -223,18 +222,11 @@ vendor_dlkm/lib/modules/Upower.ko
 -vendor/bin/fuelgauged_nvram
 
 # Core Media Profiles, Codecs, Init & Fstabs
-vendor/etc/media_codecs_c2.xml
-vendor/etc/media_codecs_performance.xml
-vendor/etc/media_profiles_V1_0.xml
-vendor/etc/ueventd.rc
-vendor/etc/init/hw/init.mt6768.rc
 vendor/etc/init/hw/init.mt6768.usb.rc
 vendor/etc/init/hw/init.mt8786.rc
 vendor/etc/init/hw/init.sensor_1_0.rc
-vendor/etc/fstab.mt6768
 vendor/etc/fstab.mt8786
 vendor/etc/permissions/handheld_core_hardware.xml
-vendor/etc/vintf/manifest.xml
 
 # Aurisys Audio Parameters (Profile 0)
 vendor/etc/audio_param/AudioParamOptions.xml

@@ -11,7 +11,6 @@ PRODUCT_COPY_FILES += \
     vendor/lenovo/poplar/proprietary/vendor/etc/AW_DSP.bin:$(TARGET_COPY_OUT_VENDOR)/etc/AW_DSP.bin \
     vendor/lenovo/poplar/proprietary/vendor/etc/AW_SINWAVE_DSP.bin:$(TARGET_COPY_OUT_VENDOR)/etc/AW_SINWAVE_DSP.bin \
     vendor/lenovo/poplar/proprietary/vendor/etc/silence.wav:$(TARGET_COPY_OUT_VENDOR)/etc/silence.wav \
-    vendor/lenovo/poplar/proprietary/vendor/etc/audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_configuration.xml \
     vendor/lenovo/poplar/proprietary/vendor/etc/audio_policy_configuration_bluetooth_legacy_hal.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_configuration_bluetooth_legacy_hal.xml \
     vendor/lenovo/poplar/proprietary/vendor/etc/audio_policy_volumes.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_volumes.xml \
     vendor/lenovo/poplar/proprietary/vendor/etc/audio_device.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_device.xml \
@@ -82,18 +81,11 @@ PRODUCT_COPY_FILES += \
     vendor/lenovo/poplar/proprietary/vendor_dlkm/lib/modules/CPU_DVFS.ko:$(TARGET_COPY_OUT_VENDOR_DLKM)/lib/modules/CPU_DVFS.ko \
     vendor/lenovo/poplar/proprietary/vendor_dlkm/lib/modules/MTK_INTERNAL_SPM.ko:$(TARGET_COPY_OUT_VENDOR_DLKM)/lib/modules/MTK_INTERNAL_SPM.ko \
     vendor/lenovo/poplar/proprietary/vendor_dlkm/lib/modules/Upower.ko:$(TARGET_COPY_OUT_VENDOR_DLKM)/lib/modules/Upower.ko \
-    vendor/lenovo/poplar/proprietary/vendor/etc/media_codecs_c2.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_c2.xml \
-    vendor/lenovo/poplar/proprietary/vendor/etc/media_codecs_performance.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_performance.xml \
-    vendor/lenovo/poplar/proprietary/vendor/etc/media_profiles_V1_0.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles_V1_0.xml \
-    vendor/lenovo/poplar/proprietary/vendor/etc/ueventd.rc:$(TARGET_COPY_OUT_VENDOR)/etc/ueventd.rc \
-    vendor/lenovo/poplar/proprietary/vendor/etc/init/hw/init.mt6768.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.mt6768.rc \
     vendor/lenovo/poplar/proprietary/vendor/etc/init/hw/init.mt6768.usb.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.mt6768.usb.rc \
     vendor/lenovo/poplar/proprietary/vendor/etc/init/hw/init.mt8786.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.mt8786.rc \
     vendor/lenovo/poplar/proprietary/vendor/etc/init/hw/init.sensor_1_0.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.sensor_1_0.rc \
-    vendor/lenovo/poplar/proprietary/vendor/etc/fstab.mt6768:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.mt6768 \
     vendor/lenovo/poplar/proprietary/vendor/etc/fstab.mt8786:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.mt8786 \
     vendor/lenovo/poplar/proprietary/vendor/etc/permissions/handheld_core_hardware.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/handheld_core_hardware.xml \
-    vendor/lenovo/poplar/proprietary/vendor/etc/vintf/manifest.xml:$(TARGET_COPY_OUT_VENDOR)/etc/vintf/manifest.xml \
     vendor/lenovo/poplar/proprietary/vendor/etc/audio_param/AudioParamOptions.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_param/AudioParamOptions.xml \
     vendor/lenovo/poplar/proprietary/vendor/etc/audio_param/AudioParamOptions_vext.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_param/AudioParamOptions_vext.xml \
     vendor/lenovo/poplar/proprietary/vendor/etc/audio_param/BtInfo_AudioParam.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_param/BtInfo_AudioParam.xml \

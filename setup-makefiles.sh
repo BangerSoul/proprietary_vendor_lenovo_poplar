@@ -42,7 +42,7 @@ ANDROIDMK="${MY_DIR}/Android.mk"
 BOARDMK="${MY_DIR}/BoardConfigVendor.mk"
 PROPLIST="${MY_DIR}/proprietary-files.txt"
 
-# 1. Generate Android.mk
+# 1. Initialize Android.mk header (prebuilt rules appended below)
 cat <<EOF >"${ANDROIDMK}"
 # Automatically generated file. DO NOT MODIFY
 #
@@ -52,7 +52,6 @@ LOCAL_PATH := \$(call my-dir)
 
 ifeq (\$(TARGET_DEVICE),${DEVICE})
 
-endif
 EOF
 
 # 2. Generate BoardConfigVendor.mk
@@ -84,6 +83,12 @@ if [ -f "${PROPLIST}" ]; then
     # Temporary arrays
     declare -a COPY_ENTRIES
     declare -a PKG_ENTRIES
+    declare -A PKG_SRC32
+    declare -A PKG_SRC64
+    declare -A PKG_SRC_SINGLE
+    declare -A PKG_TYPE
+    declare -A PKG_REL
+    declare -A PKG_NO_ELF
 
     while IFS= read -r line || [ -n "$line" ]; do
         # Trim leading and trailing whitespace using pure bash builtins
@@ -102,11 +107,15 @@ if [ -f "${PROPLIST}" ]; then
             line="${line#-}"
         fi
 
-        # Extract MODULE argument if specified
+        # Extract MODULE and DISABLE_CHECKELF arguments if specified
         MOD_OVERRIDE=""
         REGEX=';MODULE=([^;]+)'
         if [[ "$line" =~ $REGEX ]]; then
             MOD_OVERRIDE="${BASH_REMATCH[1]}"
+        fi
+        NO_CHECKELF=false
+        if [[ "$line" == *";DISABLE_CHECKELF"* ]]; then
+            NO_CHECKELF=true
         fi
 
         # Strip semicolon arguments
@@ -135,16 +144,33 @@ if [ -f "${PROPLIST}" ]; then
                     MOD_NAME="${MOD_NAME%.*}"
                 fi
             fi
-            # Add to PKG_ENTRIES if not already present
-            ALREADY_EXISTS=false
-            for existing in "${PKG_ENTRIES[@]}"; do
-                if [ "$existing" = "$MOD_NAME" ]; then
-                    ALREADY_EXISTS=true
-                    break
-                fi
-            done
-            if [ "$ALREADY_EXISTS" = false ]; then
+            if [ -z "${PKG_TYPE[$MOD_NAME]+x}" ]; then
                 PKG_ENTRIES+=("$MOD_NAME")
+            fi
+            if [ "$NO_CHECKELF" = true ]; then
+                PKG_NO_ELF["$MOD_NAME"]=true
+            fi
+            if [[ "$DST_FILE" =~ \.so$ ]]; then
+                PKG_TYPE["$MOD_NAME"]="SHARED_LIBRARIES"
+                if [[ "$DST_FILE" =~ ^vendor/lib64/ ]]; then
+                    PKG_SRC64["$MOD_NAME"]="proprietary/${DST_FILE}"
+                    SUB_DIR="$(dirname "${DST_FILE#vendor/lib64/}")"
+                    [ "$SUB_DIR" != "." ] && PKG_REL["$MOD_NAME"]="$SUB_DIR"
+                elif [[ "$DST_FILE" =~ ^vendor/lib/ ]]; then
+                    PKG_SRC32["$MOD_NAME"]="proprietary/${DST_FILE}"
+                    SUB_DIR="$(dirname "${DST_FILE#vendor/lib/}")"
+                    [ "$SUB_DIR" != "." ] && PKG_REL["$MOD_NAME"]="$SUB_DIR"
+                fi
+            elif [[ "$DST_FILE" =~ \.apex$ ]]; then
+                PKG_TYPE["$MOD_NAME"]="APEX"
+                PKG_SRC_SINGLE["$MOD_NAME"]="proprietary/${DST_FILE}"
+            else
+                PKG_TYPE["$MOD_NAME"]="EXECUTABLES"
+                PKG_SRC_SINGLE["$MOD_NAME"]="proprietary/${DST_FILE}"
+                if [[ "$DST_FILE" =~ ^vendor/bin/ ]]; then
+                    SUB_DIR="$(dirname "${DST_FILE#vendor/bin/}")"
+                    [ "$SUB_DIR" != "." ] && PKG_REL["$MOD_NAME"]="$SUB_DIR"
+                fi
             fi
         else
             # Determine target partition macro
@@ -184,19 +210,62 @@ if [ -f "${PROPLIST}" ]; then
         done
     fi
 
-    # Write PRODUCT_PACKAGES if any
+    # Write PRODUCT_PACKAGES and Android.mk BUILD_PREBUILT blocks if any
     PKG_COUNT=${#PKG_ENTRIES[@]}
     if [ ${PKG_COUNT} -gt 0 ]; then
         echo "" >>"${PRODUCTMK}"
         echo "PRODUCT_PACKAGES += \\" >>"${PRODUCTMK}"
         for ((i=0; i<PKG_COUNT; i++)); do
+            MOD_NAME="${PKG_ENTRIES[$i]}"
             if [ $i -lt $((PKG_COUNT - 1)) ]; then
-                echo "    ${PKG_ENTRIES[$i]} \\" >>"${PRODUCTMK}"
+                echo "    ${MOD_NAME} \\" >>"${PRODUCTMK}"
             else
-                echo "    ${PKG_ENTRIES[$i]}" >>"${PRODUCTMK}"
+                echo "    ${MOD_NAME}" >>"${PRODUCTMK}"
             fi
+
+            {
+                echo "include \$(CLEAR_VARS)"
+                echo "LOCAL_MODULE := ${MOD_NAME}"
+                echo "LOCAL_MODULE_OWNER := ${VENDOR}"
+                if [ "${PKG_TYPE[$MOD_NAME]}" = "SHARED_LIBRARIES" ]; then
+                    if [ -n "${PKG_SRC64[$MOD_NAME]:-}" ] && [ -n "${PKG_SRC32[$MOD_NAME]:-}" ]; then
+                        echo "LOCAL_SRC_FILES_64 := ${PKG_SRC64[$MOD_NAME]}"
+                        echo "LOCAL_SRC_FILES_32 := ${PKG_SRC32[$MOD_NAME]}"
+                        echo "LOCAL_MULTILIB := both"
+                    elif [ -n "${PKG_SRC64[$MOD_NAME]:-}" ]; then
+                        echo "LOCAL_SRC_FILES_64 := ${PKG_SRC64[$MOD_NAME]}"
+                        echo "LOCAL_MULTILIB := 64"
+                    elif [ -n "${PKG_SRC32[$MOD_NAME]:-}" ]; then
+                        echo "LOCAL_SRC_FILES_32 := ${PKG_SRC32[$MOD_NAME]}"
+                        echo "LOCAL_MULTILIB := 32"
+                    fi
+                    echo "LOCAL_MODULE_TAGS := optional"
+                    echo "LOCAL_MODULE_CLASS := SHARED_LIBRARIES"
+                    echo "LOCAL_MODULE_SUFFIX := .so"
+                    [ -n "${PKG_REL[$MOD_NAME]:-}" ] && echo "LOCAL_MODULE_RELATIVE_PATH := ${PKG_REL[$MOD_NAME]}"
+                    [ "${PKG_NO_ELF[$MOD_NAME]:-false}" = "true" ] && echo "LOCAL_CHECK_ELF_FILES := false"
+                    echo "LOCAL_VENDOR_MODULE := true"
+                elif [ "${PKG_TYPE[$MOD_NAME]}" = "APEX" ]; then
+                    echo "LOCAL_SRC_FILES := ${PKG_SRC_SINGLE[$MOD_NAME]}"
+                    echo "LOCAL_MODULE_TAGS := optional"
+                    echo "LOCAL_MODULE_CLASS := ETC"
+                    echo "LOCAL_MODULE_PATH := \$(TARGET_OUT_VENDOR)/apex"
+                    echo "LOCAL_MODULE_STEM := $(basename "${PKG_SRC_SINGLE[$MOD_NAME]}")"
+                else
+                    echo "LOCAL_SRC_FILES := ${PKG_SRC_SINGLE[$MOD_NAME]}"
+                    echo "LOCAL_MODULE_TAGS := optional"
+                    echo "LOCAL_MODULE_CLASS := EXECUTABLES"
+                    [ -n "${PKG_REL[$MOD_NAME]:-}" ] && echo "LOCAL_MODULE_RELATIVE_PATH := ${PKG_REL[$MOD_NAME]}"
+                    [ "${PKG_NO_ELF[$MOD_NAME]:-false}" = "true" ] && echo "LOCAL_CHECK_ELF_FILES := false"
+                    echo "LOCAL_VENDOR_MODULE := true"
+                fi
+                echo "include \$(BUILD_PREBUILT)"
+                echo ""
+            } >>"${ANDROIDMK}"
         done
     fi
 fi
+
+echo "endif" >>"${ANDROIDMK}"
 
 echo "Successfully generated ${DEVICE}-vendor.mk, Android.mk, and BoardConfigVendor.mk"

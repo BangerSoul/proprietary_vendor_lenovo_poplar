@@ -6,4 +6,1171 @@ LOCAL_PATH := $(call my-dir)
 
 ifeq ($(TARGET_DEVICE),poplar)
 
+include $(CLEAR_VARS)
+LOCAL_MODULE := libGLES_mali
+LOCAL_MODULE_OWNER := lenovo
+LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/egl/libGLES_mali.so
+LOCAL_SRC_FILES_32 := proprietary/vendor/lib/egl/libGLES_mali.so
+LOCAL_MULTILIB := both
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_CLASS := SHARED_LIBRARIES
+LOCAL_MODULE_SUFFIX := .so
+LOCAL_MODULE_RELATIVE_PATH := egl
+LOCAL_CHECK_ELF_FILES := false
+LOCAL_VENDOR_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := libGLES_meow
+LOCAL_MODULE_OWNER := lenovo
+LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/egl/libGLES_meow.so
+LOCAL_SRC_FILES_32 := proprietary/vendor/lib/egl/libGLES_meow.so
+LOCAL_MULTILIB := both
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_CLASS := SHARED_LIBRARIES
+LOCAL_MODULE_SUFFIX := .so
+LOCAL_MODULE_RELATIVE_PATH := egl
+LOCAL_CHECK_ELF_FILES := false
+LOCAL_VENDOR_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := libMEOW_data
+LOCAL_MODULE_OWNER := lenovo
+LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/egl/libMEOW_data.so
+LOCAL_SRC_FILES_32 := proprietary/vendor/lib/egl/libMEOW_data.so
+LOCAL_MULTILIB := both
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_CLASS := SHARED_LIBRARIES
+LOCAL_MODULE_SUFFIX := .so
+LOCAL_MODULE_RELATIVE_PATH := egl
+LOCAL_CHECK_ELF_FILES := false
+LOCAL_VENDOR_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := libMEOW_qt
+LOCAL_MODULE_OWNER := lenovo
+LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/egl/libMEOW_qt.so
+LOCAL_SRC_FILES_32 := proprietary/vendor/lib/egl/libMEOW_qt.so
+LOCAL_MULTILIB := both
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_CLASS := SHARED_LIBRARIES
+LOCAL_MODULE_SUFFIX := .so
+LOCAL_MODULE_RELATIVE_PATH := egl
+LOCAL_CHECK_ELF_FILES := false
+LOCAL_VENDOR_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := libMEOW_trace
+LOCAL_MODULE_OWNER := lenovo
+LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/egl/libMEOW_trace.so
+LOCAL_SRC_FILES_32 := proprietary/vendor/lib/egl/libMEOW_trace.so
+LOCAL_MULTILIB := both
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_CLASS := SHARED_LIBRARIES
+LOCAL_MODULE_SUFFIX := .so
+LOCAL_MODULE_RELATIVE_PATH := egl
+LOCAL_CHECK_ELF_FILES := false
+LOCAL_VENDOR_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := vulkan.mali
+LOCAL_MODULE_OWNER := lenovo
+LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/hw/vulkan.mali.so
+LOCAL_MULTILIB := 64
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_CLASS := SHARED_LIBRARIES
+LOCAL_MODULE_SUFFIX := .so
+LOCAL_MODULE_RELATIVE_PATH := hw
+LOCAL_CHECK_ELF_FILES := false
+LOCAL_VENDOR_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := android.hardware.graphics.composer@3.3-service
+LOCAL_MODULE_OWNER := lenovo
+LOCAL_SRC_FILES := proprietary/vendor/bin/hw/android.hardware.graphics.composer@3.3-service
+LOCAL_MULTILIB := 64
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_CLASS := EXECUTABLES
+LOCAL_MODULE_RELATIVE_PATH := hw
+LOCAL_VENDOR_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := hwcomposer.mt6768
+LOCAL_MODULE_OWNER := lenovo
+LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/hw/hwcomposer.mt6768.so
+LOCAL_MULTILIB := 64
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_CLASS := SHARED_LIBRARIES
+LOCAL_MODULE_SUFFIX := .so
+LOCAL_MODULE_RELATIVE_PATH := hw
+LOCAL_CHECK_ELF_FILES := false
+LOCAL_VENDOR_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := libcomposer_ext
+LOCAL_MODULE_OWNER := lenovo
+LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libcomposer_ext.so
+LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libcomposer_ext.so
+LOCAL_MULTILIB := both
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_CLASS := SHARED_LIBRARIES
+LOCAL_MODULE_SUFFIX := .so
+LOCAL_VENDOR_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := android.hardware.graphics.allocator-V2-service-mediatek
+LOCAL_MODULE_OWNER := lenovo
+LOCAL_SRC_FILES := proprietary/vendor/bin/hw/android.hardware.graphics.allocator-V2-service-mediatek
+LOCAL_MULTILIB := 64
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_CLASS := EXECUTABLES
+LOCAL_MODULE_RELATIVE_PATH := hw
+LOCAL_VENDOR_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := android.hardware.graphics.allocator-V2-mediatek
+LOCAL_MODULE_OWNER := lenovo
+LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/hw/android.hardware.graphics.allocator-V2-mediatek.so
+LOCAL_SRC_FILES_32 := proprietary/vendor/lib/hw/android.hardware.graphics.allocator-V2-mediatek.so
+LOCAL_MULTILIB := both
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_CLASS := SHARED_LIBRARIES
+LOCAL_MODULE_SUFFIX := .so
+LOCAL_MODULE_RELATIVE_PATH := hw
+LOCAL_VENDOR_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := mapper.mediatek
+LOCAL_MODULE_OWNER := lenovo
+LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/hw/mapper.mediatek.so
+LOCAL_SRC_FILES_32 := proprietary/vendor/lib/hw/mapper.mediatek.so
+LOCAL_MULTILIB := both
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_CLASS := SHARED_LIBRARIES
+LOCAL_MODULE_SUFFIX := .so
+LOCAL_MODULE_RELATIVE_PATH := hw
+LOCAL_VENDOR_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := arm.mali.platform-V2-ndk
+LOCAL_MODULE_OWNER := lenovo
+LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/arm.mali.platform-V2-ndk.so
+LOCAL_SRC_FILES_32 := proprietary/vendor/lib/arm.mali.platform-V2-ndk.so
+LOCAL_MULTILIB := both
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_CLASS := SHARED_LIBRARIES
+LOCAL_MODULE_SUFFIX := .so
+LOCAL_VENDOR_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := libarm_gralloc_properties_sysprop
+LOCAL_MODULE_OWNER := lenovo
+LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libarm_gralloc_properties_sysprop.so
+LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libarm_gralloc_properties_sysprop.so
+LOCAL_MULTILIB := both
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_CLASS := SHARED_LIBRARIES
+LOCAL_MODULE_SUFFIX := .so
+LOCAL_VENDOR_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := libarm_mali_config_sysprops
+LOCAL_MODULE_OWNER := lenovo
+LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libarm_mali_config_sysprops.so
+LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libarm_mali_config_sysprops.so
+LOCAL_MULTILIB := both
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_CLASS := SHARED_LIBRARIES
+LOCAL_MODULE_SUFFIX := .so
+LOCAL_VENDOR_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := libarm_egl_properties_sysprop
+LOCAL_MODULE_OWNER := lenovo
+LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libarm_egl_properties_sysprop.so
+LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libarm_egl_properties_sysprop.so
+LOCAL_MULTILIB := both
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_CLASS := SHARED_LIBRARIES
+LOCAL_MODULE_SUFFIX := .so
+LOCAL_VENDOR_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := libgralloc_extra
+LOCAL_MODULE_OWNER := lenovo
+LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libgralloc_extra.so
+LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libgralloc_extra.so
+LOCAL_MULTILIB := both
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_CLASS := SHARED_LIBRARIES
+LOCAL_MODULE_SUFFIX := .so
+LOCAL_VENDOR_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := libgralloc_metadata
+LOCAL_MODULE_OWNER := lenovo
+LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libgralloc_metadata.so
+LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libgralloc_metadata.so
+LOCAL_MULTILIB := both
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_CLASS := SHARED_LIBRARIES
+LOCAL_MODULE_SUFFIX := .so
+LOCAL_VENDOR_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := libgralloctypes_mtk
+LOCAL_MODULE_OWNER := lenovo
+LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libgralloctypes_mtk.so
+LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libgralloctypes_mtk.so
+LOCAL_MULTILIB := both
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_CLASS := SHARED_LIBRARIES
+LOCAL_MODULE_SUFFIX := .so
+LOCAL_VENDOR_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := libion_mtk
+LOCAL_MODULE_OWNER := lenovo
+LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libion_mtk.so
+LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libion_mtk.so
+LOCAL_MULTILIB := both
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_CLASS := SHARED_LIBRARIES
+LOCAL_MODULE_SUFFIX := .so
+LOCAL_VENDOR_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := vendor.mediatek.hardware.pq_aidl-service
+LOCAL_MODULE_OWNER := lenovo
+LOCAL_SRC_FILES := proprietary/vendor/bin/hw/vendor.mediatek.hardware.pq_aidl-service
+LOCAL_MULTILIB := 64
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_CLASS := EXECUTABLES
+LOCAL_MODULE_RELATIVE_PATH := hw
+LOCAL_VENDOR_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := vendor.mediatek.hardware.mmlpq@V1-service
+LOCAL_MODULE_OWNER := lenovo
+LOCAL_SRC_FILES := proprietary/vendor/bin/hw/vendor.mediatek.hardware.mmlpq@V1-service
+LOCAL_MULTILIB := 64
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_CLASS := EXECUTABLES
+LOCAL_MODULE_RELATIVE_PATH := hw
+LOCAL_VENDOR_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := vendor.mediatek.hardware.gpuserv-service
+LOCAL_MODULE_OWNER := lenovo
+LOCAL_SRC_FILES := proprietary/vendor/bin/hw/vendor.mediatek.hardware.gpuserv-service
+LOCAL_MULTILIB := 64
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_CLASS := EXECUTABLES
+LOCAL_MODULE_RELATIVE_PATH := hw
+LOCAL_VENDOR_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := vendor.mediatek.hardware.pq_aidl-impl
+LOCAL_MODULE_OWNER := lenovo
+LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/hw/vendor.mediatek.hardware.pq_aidl-impl.so
+LOCAL_SRC_FILES_32 := proprietary/vendor/lib/hw/vendor.mediatek.hardware.pq_aidl-impl.so
+LOCAL_MULTILIB := both
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_CLASS := SHARED_LIBRARIES
+LOCAL_MODULE_SUFFIX := .so
+LOCAL_MODULE_RELATIVE_PATH := hw
+LOCAL_VENDOR_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := libdpframework
+LOCAL_MODULE_OWNER := lenovo
+LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/mt6768/libdpframework.so
+LOCAL_SRC_FILES_32 := proprietary/vendor/lib/mt6768/libdpframework.so
+LOCAL_MULTILIB := both
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_CLASS := SHARED_LIBRARIES
+LOCAL_MODULE_SUFFIX := .so
+LOCAL_MODULE_RELATIVE_PATH := mt6768
+LOCAL_VENDOR_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := libmml
+LOCAL_MODULE_OWNER := lenovo
+LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/mt6768/libmml.so
+LOCAL_MULTILIB := 64
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_CLASS := SHARED_LIBRARIES
+LOCAL_MODULE_SUFFIX := .so
+LOCAL_MODULE_RELATIVE_PATH := mt6768
+LOCAL_VENDOR_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := android.hardware.audio.service-aidl.mediatek
+LOCAL_MODULE_OWNER := lenovo
+LOCAL_SRC_FILES := proprietary/vendor/bin/hw/android.hardware.audio.service-aidl.mediatek
+LOCAL_MULTILIB := 64
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_CLASS := EXECUTABLES
+LOCAL_MODULE_RELATIVE_PATH := hw
+LOCAL_VENDOR_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := audio.primary.mt6768
+LOCAL_MODULE_OWNER := lenovo
+LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/hw/audio.primary.mt6768.so
+LOCAL_SRC_FILES_32 := proprietary/vendor/lib/hw/audio.primary.mt6768.so
+LOCAL_MULTILIB := both
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_CLASS := SHARED_LIBRARIES
+LOCAL_MODULE_SUFFIX := .so
+LOCAL_MODULE_RELATIVE_PATH := hw
+LOCAL_CHECK_ELF_FILES := false
+LOCAL_VENDOR_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := audio.r_submix.mt6768
+LOCAL_MODULE_OWNER := lenovo
+LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/hw/audio.r_submix.mt6768.so
+LOCAL_SRC_FILES_32 := proprietary/vendor/lib/hw/audio.r_submix.mt6768.so
+LOCAL_MULTILIB := both
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_CLASS := SHARED_LIBRARIES
+LOCAL_MODULE_SUFFIX := .so
+LOCAL_MODULE_RELATIVE_PATH := hw
+LOCAL_VENDOR_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := vendor.mediatek.hardware.audio-impl
+LOCAL_MODULE_OWNER := lenovo
+LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/hw/vendor.mediatek.hardware.audio-impl.so
+LOCAL_SRC_FILES_32 := proprietary/vendor/lib/hw/vendor.mediatek.hardware.audio-impl.so
+LOCAL_MULTILIB := both
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_CLASS := SHARED_LIBRARIES
+LOCAL_MODULE_SUFFIX := .so
+LOCAL_MODULE_RELATIVE_PATH := hw
+LOCAL_VENDOR_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := android.hardware.audio.core-impl-mediatek
+LOCAL_MODULE_OWNER := lenovo
+LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/android.hardware.audio.core-impl-mediatek.so
+LOCAL_SRC_FILES_32 := proprietary/vendor/lib/android.hardware.audio.core-impl-mediatek.so
+LOCAL_MULTILIB := both
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_CLASS := SHARED_LIBRARIES
+LOCAL_MODULE_SUFFIX := .so
+LOCAL_VENDOR_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := libawinic_mtk_aurisys
+LOCAL_MODULE_OWNER := lenovo
+LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libawinic_mtk_aurisys.so
+LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libawinic_mtk_aurisys.so
+LOCAL_MULTILIB := both
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_CLASS := SHARED_LIBRARIES
+LOCAL_MODULE_SUFFIX := .so
+LOCAL_VENDOR_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := android.hardware.audio.effect.aidl-impl-mediatek
+LOCAL_MODULE_OWNER := lenovo
+LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/hw/android.hardware.audio.effect.aidl-impl-mediatek.so
+LOCAL_MULTILIB := 64
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_CLASS := SHARED_LIBRARIES
+LOCAL_MODULE_SUFFIX := .so
+LOCAL_MODULE_RELATIVE_PATH := hw
+LOCAL_VENDOR_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := camerahalserver
+LOCAL_MODULE_OWNER := lenovo
+LOCAL_SRC_FILES := proprietary/vendor/bin/hw/camerahalserver
+LOCAL_MULTILIB := 64
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_CLASS := EXECUTABLES
+LOCAL_MODULE_RELATIVE_PATH := hw
+LOCAL_VENDOR_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := android.hardware.camera.provider@2.6-impl-mediatek
+LOCAL_MODULE_OWNER := lenovo
+LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/hw/android.hardware.camera.provider@2.6-impl-mediatek.so
+LOCAL_MULTILIB := 64
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_CLASS := SHARED_LIBRARIES
+LOCAL_MODULE_SUFFIX := .so
+LOCAL_MODULE_RELATIVE_PATH := hw
+LOCAL_CHECK_ELF_FILES := false
+LOCAL_VENDOR_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := vendor.mediatek.hardware.camera.atms_aidl@1.0-impl
+LOCAL_MODULE_OWNER := lenovo
+LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/hw/vendor.mediatek.hardware.camera.atms_aidl@1.0-impl.so
+LOCAL_MULTILIB := 64
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_CLASS := SHARED_LIBRARIES
+LOCAL_MODULE_SUFFIX := .so
+LOCAL_MODULE_RELATIVE_PATH := hw
+LOCAL_VENDOR_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := vendor.mediatek.hardware.camera.bgservice_aidl@1.0-impl
+LOCAL_MODULE_OWNER := lenovo
+LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/hw/vendor.mediatek.hardware.camera.bgservice_aidl@1.0-impl.so
+LOCAL_MULTILIB := 64
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_CLASS := SHARED_LIBRARIES
+LOCAL_MODULE_SUFFIX := .so
+LOCAL_MODULE_RELATIVE_PATH := hw
+LOCAL_VENDOR_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := vendor.mediatek.hardware.camera.isphal_aidl@1.0-impl
+LOCAL_MODULE_OWNER := lenovo
+LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/hw/vendor.mediatek.hardware.camera.isphal_aidl@1.0-impl.so
+LOCAL_MULTILIB := 64
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_CLASS := SHARED_LIBRARIES
+LOCAL_MODULE_SUFFIX := .so
+LOCAL_MODULE_RELATIVE_PATH := hw
+LOCAL_CHECK_ELF_FILES := false
+LOCAL_VENDOR_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := vendor.mediatek.hardware.camera.postproc_aidl@1.0-impl
+LOCAL_MODULE_OWNER := lenovo
+LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/hw/vendor.mediatek.hardware.camera.postproc_aidl@1.0-impl.so
+LOCAL_MULTILIB := 64
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_CLASS := SHARED_LIBRARIES
+LOCAL_MODULE_SUFFIX := .so
+LOCAL_MODULE_RELATIVE_PATH := hw
+LOCAL_VENDOR_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := lib3a.ccu.dm
+LOCAL_MODULE_OWNER := lenovo
+LOCAL_SRC_FILES := proprietary/vendor/bin/lib3a.ccu.dm
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_CLASS := EXECUTABLES
+LOCAL_CHECK_ELF_FILES := false
+LOCAL_VENDOR_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := lib3a.ccu.pm
+LOCAL_MODULE_OWNER := lenovo
+LOCAL_SRC_FILES := proprietary/vendor/bin/lib3a.ccu.pm
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_CLASS := EXECUTABLES
+LOCAL_CHECK_ELF_FILES := false
+LOCAL_VENDOR_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := lib3a.ccudrv
+LOCAL_MODULE_OWNER := lenovo
+LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/lib3a.ccudrv.so
+LOCAL_MULTILIB := 64
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_CLASS := SHARED_LIBRARIES
+LOCAL_MODULE_SUFFIX := .so
+LOCAL_VENDOR_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := lib3a.ccuif
+LOCAL_MODULE_OWNER := lenovo
+LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/lib3a.ccuif.so
+LOCAL_MULTILIB := 64
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_CLASS := SHARED_LIBRARIES
+LOCAL_MODULE_SUFFIX := .so
+LOCAL_VENDOR_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := libcameracustom
+LOCAL_MODULE_OWNER := lenovo
+LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libcameracustom.so
+LOCAL_MULTILIB := 64
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_CLASS := SHARED_LIBRARIES
+LOCAL_MODULE_SUFFIX := .so
+LOCAL_CHECK_ELF_FILES := false
+LOCAL_VENDOR_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := libcameracustom.eis
+LOCAL_MODULE_OWNER := lenovo
+LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libcameracustom.eis.so
+LOCAL_MULTILIB := 64
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_CLASS := SHARED_LIBRARIES
+LOCAL_MODULE_SUFFIX := .so
+LOCAL_VENDOR_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := libcam.halsensor
+LOCAL_MODULE_OWNER := lenovo
+LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libcam.halsensor.so
+LOCAL_MULTILIB := 64
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_CLASS := SHARED_LIBRARIES
+LOCAL_MODULE_SUFFIX := .so
+LOCAL_VENDOR_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := libcam.halsensor.hwintegration.isp4t
+LOCAL_MODULE_OWNER := lenovo
+LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libcam.halsensor.hwintegration.isp4t.so
+LOCAL_MULTILIB := 64
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_CLASS := SHARED_LIBRARIES
+LOCAL_MODULE_SUFFIX := .so
+LOCAL_VENDOR_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := libcamalgo.3dnr
+LOCAL_MODULE_OWNER := lenovo
+LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libcamalgo.3dnr.so
+LOCAL_MULTILIB := 64
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_CLASS := SHARED_LIBRARIES
+LOCAL_MODULE_SUFFIX := .so
+LOCAL_VENDOR_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := libcamalgo.abf
+LOCAL_MODULE_OWNER := lenovo
+LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libcamalgo.abf.so
+LOCAL_MULTILIB := 64
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_CLASS := SHARED_LIBRARIES
+LOCAL_MODULE_SUFFIX := .so
+LOCAL_VENDOR_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := libcamalgo.dngop
+LOCAL_MODULE_OWNER := lenovo
+LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libcamalgo.dngop.so
+LOCAL_MULTILIB := 64
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_CLASS := SHARED_LIBRARIES
+LOCAL_MODULE_SUFFIX := .so
+LOCAL_VENDOR_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := libcamalgo.eis
+LOCAL_MODULE_OWNER := lenovo
+LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libcamalgo.eis.so
+LOCAL_MULTILIB := 64
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_CLASS := SHARED_LIBRARIES
+LOCAL_MODULE_SUFFIX := .so
+LOCAL_VENDOR_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := libcamalgo.fdft
+LOCAL_MODULE_OWNER := lenovo
+LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libcamalgo.fdft.so
+LOCAL_MULTILIB := 64
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_CLASS := SHARED_LIBRARIES
+LOCAL_MODULE_SUFFIX := .so
+LOCAL_VENDOR_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := libcamalgo.flicker
+LOCAL_MODULE_OWNER := lenovo
+LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libcamalgo.flicker.so
+LOCAL_MULTILIB := 64
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_CLASS := SHARED_LIBRARIES
+LOCAL_MODULE_SUFFIX := .so
+LOCAL_VENDOR_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := libcamalgo.fsc
+LOCAL_MODULE_OWNER := lenovo
+LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libcamalgo.fsc.so
+LOCAL_MULTILIB := 64
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_CLASS := SHARED_LIBRARIES
+LOCAL_MODULE_SUFFIX := .so
+LOCAL_VENDOR_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := libcamalgo.gyro
+LOCAL_MODULE_OWNER := lenovo
+LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libcamalgo.gyro.so
+LOCAL_MULTILIB := 64
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_CLASS := SHARED_LIBRARIES
+LOCAL_MODULE_SUFFIX := .so
+LOCAL_VENDOR_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := libcamalgo.ispfeature
+LOCAL_MODULE_OWNER := lenovo
+LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libcamalgo.ispfeature.so
+LOCAL_MULTILIB := 64
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_CLASS := SHARED_LIBRARIES
+LOCAL_MODULE_SUFFIX := .so
+LOCAL_VENDOR_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := libcamalgo.lmv
+LOCAL_MODULE_OWNER := lenovo
+LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libcamalgo.lmv.so
+LOCAL_MULTILIB := 64
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_CLASS := SHARED_LIBRARIES
+LOCAL_MODULE_SUFFIX := .so
+LOCAL_VENDOR_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := libcamalgo.lsc
+LOCAL_MODULE_OWNER := lenovo
+LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libcamalgo.lsc.so
+LOCAL_MULTILIB := 64
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_CLASS := SHARED_LIBRARIES
+LOCAL_MODULE_SUFFIX := .so
+LOCAL_VENDOR_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := libcamalgo.mfnr
+LOCAL_MODULE_OWNER := lenovo
+LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libcamalgo.mfnr.so
+LOCAL_MULTILIB := 64
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_CLASS := SHARED_LIBRARIES
+LOCAL_MODULE_SUFFIX := .so
+LOCAL_VENDOR_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := libcamalgo.nr
+LOCAL_MODULE_OWNER := lenovo
+LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libcamalgo.nr.so
+LOCAL_MULTILIB := 64
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_CLASS := SHARED_LIBRARIES
+LOCAL_MODULE_SUFFIX := .so
+LOCAL_VENDOR_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := libcamalgo.platform
+LOCAL_MODULE_OWNER := lenovo
+LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libcamalgo.platform.so
+LOCAL_MULTILIB := 64
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_CLASS := SHARED_LIBRARIES
+LOCAL_MODULE_SUFFIX := .so
+LOCAL_VENDOR_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := libcamalgo.platform2
+LOCAL_MODULE_OWNER := lenovo
+LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libcamalgo.platform2.so
+LOCAL_MULTILIB := 64
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_CLASS := SHARED_LIBRARIES
+LOCAL_MODULE_SUFFIX := .so
+LOCAL_VENDOR_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := libcamalgo.utility
+LOCAL_MODULE_OWNER := lenovo
+LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libcamalgo.utility.so
+LOCAL_MULTILIB := 64
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_CLASS := SHARED_LIBRARIES
+LOCAL_MODULE_SUFFIX := .so
+LOCAL_VENDOR_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := libcamalgo.warp
+LOCAL_MODULE_OWNER := lenovo
+LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libcamalgo.warp.so
+LOCAL_MULTILIB := 64
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_CLASS := SHARED_LIBRARIES
+LOCAL_MODULE_SUFFIX := .so
+LOCAL_VENDOR_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := android.hardware.wifi-service-lazy
+LOCAL_MODULE_OWNER := lenovo
+LOCAL_SRC_FILES := proprietary/vendor/bin/hw/android.hardware.wifi-service-lazy
+LOCAL_MULTILIB := 64
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_CLASS := EXECUTABLES
+LOCAL_MODULE_RELATIVE_PATH := hw
+LOCAL_VENDOR_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := wmt_launcher
+LOCAL_MODULE_OWNER := lenovo
+LOCAL_SRC_FILES := proprietary/vendor/bin/wmt_launcher
+LOCAL_MULTILIB := 64
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_CLASS := EXECUTABLES
+LOCAL_VENDOR_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := wmt_loader
+LOCAL_MODULE_OWNER := lenovo
+LOCAL_SRC_FILES := proprietary/vendor/bin/wmt_loader
+LOCAL_MULTILIB := 64
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_CLASS := EXECUTABLES
+LOCAL_VENDOR_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := libwifi-hal
+LOCAL_MODULE_OWNER := lenovo
+LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libwifi-hal.so
+LOCAL_MULTILIB := 64
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_CLASS := SHARED_LIBRARIES
+LOCAL_MODULE_SUFFIX := .so
+LOCAL_VENDOR_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := android.hardware.bluetooth-service-mediatek
+LOCAL_MODULE_OWNER := lenovo
+LOCAL_SRC_FILES := proprietary/vendor/bin/hw/android.hardware.bluetooth-service-mediatek
+LOCAL_MULTILIB := 64
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_CLASS := EXECUTABLES
+LOCAL_MODULE_RELATIVE_PATH := hw
+LOCAL_VENDOR_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := vendor.mediatek.hardware.bluetooth.audio@2.1-impl
+LOCAL_MODULE_OWNER := lenovo
+LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/hw/vendor.mediatek.hardware.bluetooth.audio@2.1-impl.so
+LOCAL_MULTILIB := 64
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_CLASS := SHARED_LIBRARIES
+LOCAL_MODULE_SUFFIX := .so
+LOCAL_MODULE_RELATIVE_PATH := hw
+LOCAL_VENDOR_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := vendor.mediatek.hardware.bluetooth.audio@2.2-impl
+LOCAL_MODULE_OWNER := lenovo
+LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/hw/vendor.mediatek.hardware.bluetooth.audio@2.2-impl.so
+LOCAL_MULTILIB := 64
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_CLASS := SHARED_LIBRARIES
+LOCAL_MODULE_SUFFIX := .so
+LOCAL_MODULE_RELATIVE_PATH := hw
+LOCAL_VENDOR_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := android.hardware.bluetooth.audio@2.1-impl
+LOCAL_MODULE_OWNER := lenovo
+LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/hw/android.hardware.bluetooth.audio@2.1-impl.so
+LOCAL_MULTILIB := 64
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_CLASS := SHARED_LIBRARIES
+LOCAL_MODULE_SUFFIX := .so
+LOCAL_MODULE_RELATIVE_PATH := hw
+LOCAL_VENDOR_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := libbluetooth_audio_session_aidl_mtk
+LOCAL_MODULE_OWNER := lenovo
+LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libbluetooth_audio_session_aidl_mtk.so
+LOCAL_MULTILIB := 64
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_CLASS := SHARED_LIBRARIES
+LOCAL_MODULE_SUFFIX := .so
+LOCAL_VENDOR_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := libbluetooth_mtk
+LOCAL_MODULE_OWNER := lenovo
+LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libbluetooth_mtk.so
+LOCAL_MULTILIB := 64
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_CLASS := SHARED_LIBRARIES
+LOCAL_MODULE_SUFFIX := .so
+LOCAL_VENDOR_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := libbt-vendor
+LOCAL_MODULE_OWNER := lenovo
+LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libbt-vendor.so
+LOCAL_MULTILIB := 64
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_CLASS := SHARED_LIBRARIES
+LOCAL_MODULE_SUFFIX := .so
+LOCAL_VENDOR_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := android.hardware.gnss-service.mediatek
+LOCAL_MODULE_OWNER := lenovo
+LOCAL_SRC_FILES := proprietary/vendor/bin/hw/android.hardware.gnss-service.mediatek
+LOCAL_MULTILIB := 64
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_CLASS := EXECUTABLES
+LOCAL_MODULE_RELATIVE_PATH := hw
+LOCAL_VENDOR_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := android.hardware.gnss-impl-mediatek
+LOCAL_MODULE_OWNER := lenovo
+LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/hw/android.hardware.gnss-impl-mediatek.so
+LOCAL_MULTILIB := 64
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_CLASS := SHARED_LIBRARIES
+LOCAL_MODULE_SUFFIX := .so
+LOCAL_MODULE_RELATIVE_PATH := hw
+LOCAL_VENDOR_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := vendor.mediatek.hardware.gnss-impl
+LOCAL_MODULE_OWNER := lenovo
+LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/hw/vendor.mediatek.hardware.gnss-impl.so
+LOCAL_MULTILIB := 64
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_CLASS := SHARED_LIBRARIES
+LOCAL_MODULE_SUFFIX := .so
+LOCAL_MODULE_RELATIVE_PATH := hw
+LOCAL_VENDOR_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := mnld
+LOCAL_MODULE_OWNER := lenovo
+LOCAL_SRC_FILES := proprietary/vendor/bin/mnld
+LOCAL_MULTILIB := 64
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_CLASS := EXECUTABLES
+LOCAL_VENDOR_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := android.hardware.sensors-service.multihal
+LOCAL_MODULE_OWNER := lenovo
+LOCAL_SRC_FILES := proprietary/vendor/bin/hw/android.hardware.sensors-service.multihal
+LOCAL_MULTILIB := 64
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_CLASS := EXECUTABLES
+LOCAL_MODULE_RELATIVE_PATH := hw
+LOCAL_VENDOR_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := android.hardware.sensors@2.X-subhal-mediatek
+LOCAL_MODULE_OWNER := lenovo
+LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/hw/android.hardware.sensors@2.X-subhal-mediatek.so
+LOCAL_MULTILIB := 64
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_CLASS := SHARED_LIBRARIES
+LOCAL_MODULE_SUFFIX := .so
+LOCAL_MODULE_RELATIVE_PATH := hw
+LOCAL_VENDOR_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := sensors.mt6768
+LOCAL_MODULE_OWNER := lenovo
+LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/hw/sensors.mt6768.so
+LOCAL_MULTILIB := 64
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_CLASS := SHARED_LIBRARIES
+LOCAL_MODULE_SUFFIX := .so
+LOCAL_MODULE_RELATIVE_PATH := hw
+LOCAL_CHECK_ELF_FILES := false
+LOCAL_VENDOR_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := sensors.dynamic_sensor_hal
+LOCAL_MODULE_OWNER := lenovo
+LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/hw/sensors.dynamic_sensor_hal.so
+LOCAL_MULTILIB := 64
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_CLASS := SHARED_LIBRARIES
+LOCAL_MODULE_SUFFIX := .so
+LOCAL_MODULE_RELATIVE_PATH := hw
+LOCAL_VENDOR_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := librgbwlightsensor
+LOCAL_MODULE_OWNER := lenovo
+LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/librgbwlightsensor.so
+LOCAL_MULTILIB := 64
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_CLASS := SHARED_LIBRARIES
+LOCAL_MODULE_SUFFIX := .so
+LOCAL_VENDOR_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := com.google.android.widevine.nonupdatable
+LOCAL_MODULE_OWNER := lenovo
+LOCAL_SRC_FILES := proprietary/vendor/apex/com.google.android.widevine.nonupdatable.apex
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_CLASS := ETC
+LOCAL_MODULE_PATH := $(TARGET_OUT_VENDOR)/apex
+LOCAL_MODULE_STEM := com.google.android.widevine.nonupdatable.apex
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := teei_daemon
+LOCAL_MODULE_OWNER := lenovo
+LOCAL_SRC_FILES := proprietary/vendor/bin/teei_daemon
+LOCAL_MULTILIB := 64
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_CLASS := EXECUTABLES
+LOCAL_VENDOR_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := init_thh
+LOCAL_MODULE_OWNER := lenovo
+LOCAL_SRC_FILES := proprietary/vendor/bin/init_thh
+LOCAL_MULTILIB := 64
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_CLASS := EXECUTABLES
+LOCAL_VENDOR_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := libteei_daemon_vfs
+LOCAL_MODULE_OWNER := lenovo
+LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libteei_daemon_vfs.so
+LOCAL_MULTILIB := 64
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_CLASS := SHARED_LIBRARIES
+LOCAL_MODULE_SUFFIX := .so
+LOCAL_VENDOR_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := android.hardware.thermal-service.mediatek
+LOCAL_MODULE_OWNER := lenovo
+LOCAL_SRC_FILES := proprietary/vendor/bin/hw/android.hardware.thermal-service.mediatek
+LOCAL_MULTILIB := 64
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_CLASS := EXECUTABLES
+LOCAL_MODULE_RELATIVE_PATH := hw
+LOCAL_VENDOR_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := thermal_hal
+LOCAL_MODULE_OWNER := lenovo
+LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/hw/thermal_hal.so
+LOCAL_SRC_FILES_32 := proprietary/vendor/lib/hw/thermal_hal.so
+LOCAL_MULTILIB := both
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_CLASS := SHARED_LIBRARIES
+LOCAL_MODULE_SUFFIX := .so
+LOCAL_MODULE_RELATIVE_PATH := hw
+LOCAL_VENDOR_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := thermal
+LOCAL_MODULE_OWNER := lenovo
+LOCAL_SRC_FILES := proprietary/vendor/bin/thermal
+LOCAL_MULTILIB := 64
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_CLASS := EXECUTABLES
+LOCAL_VENDOR_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := thermal_manager
+LOCAL_MODULE_OWNER := lenovo
+LOCAL_SRC_FILES := proprietary/vendor/bin/thermal_manager
+LOCAL_MULTILIB := 64
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_CLASS := EXECUTABLES
+LOCAL_VENDOR_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := thermalloadalgod
+LOCAL_MODULE_OWNER := lenovo
+LOCAL_SRC_FILES := proprietary/vendor/bin/thermalloadalgod
+LOCAL_MULTILIB := 64
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_CLASS := EXECUTABLES
+LOCAL_VENDOR_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := libthermalalgo
+LOCAL_MODULE_OWNER := lenovo
+LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libthermalalgo.so
+LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libthermalalgo.so
+LOCAL_MULTILIB := both
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_CLASS := SHARED_LIBRARIES
+LOCAL_MODULE_SUFFIX := .so
+LOCAL_VENDOR_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := vendor.mediatek.hardware.mtkpower-service.mediatek
+LOCAL_MODULE_OWNER := lenovo
+LOCAL_SRC_FILES := proprietary/vendor/bin/hw/vendor.mediatek.hardware.mtkpower-service.mediatek
+LOCAL_MULTILIB := 64
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_CLASS := EXECUTABLES
+LOCAL_MODULE_RELATIVE_PATH := hw
+LOCAL_VENDOR_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := vendor.mediatek.hardware.mtkpower-aidl-impl
+LOCAL_MODULE_OWNER := lenovo
+LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/hw/vendor.mediatek.hardware.mtkpower-aidl-impl.so
+LOCAL_SRC_FILES_32 := proprietary/vendor/lib/hw/vendor.mediatek.hardware.mtkpower-aidl-impl.so
+LOCAL_MULTILIB := both
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_CLASS := SHARED_LIBRARIES
+LOCAL_MODULE_SUFFIX := .so
+LOCAL_MODULE_RELATIVE_PATH := hw
+LOCAL_VENDOR_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := libpowerhal
+LOCAL_MODULE_OWNER := lenovo
+LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libpowerhal.so
+LOCAL_MULTILIB := 64
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_CLASS := SHARED_LIBRARIES
+LOCAL_MODULE_SUFFIX := .so
+LOCAL_VENDOR_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := libpowerhalwrap_vendor
+LOCAL_MODULE_OWNER := lenovo
+LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libpowerhalwrap_vendor.so
+LOCAL_MULTILIB := 64
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_CLASS := SHARED_LIBRARIES
+LOCAL_MODULE_SUFFIX := .so
+LOCAL_VENDOR_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := vendor.lenovo.hardware.battery-service
+LOCAL_MODULE_OWNER := lenovo
+LOCAL_SRC_FILES := proprietary/vendor/bin/hw/vendor.lenovo.hardware.battery-service
+LOCAL_MULTILIB := 64
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_CLASS := EXECUTABLES
+LOCAL_MODULE_RELATIVE_PATH := hw
+LOCAL_VENDOR_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := fuelgauged
+LOCAL_MODULE_OWNER := lenovo
+LOCAL_SRC_FILES := proprietary/vendor/bin/fuelgauged
+LOCAL_MULTILIB := 32
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_CLASS := EXECUTABLES
+LOCAL_VENDOR_MODULE := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := fuelgauged_nvram
+LOCAL_MODULE_OWNER := lenovo
+LOCAL_SRC_FILES := proprietary/vendor/bin/fuelgauged_nvram
+LOCAL_MULTILIB := 64
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_CLASS := EXECUTABLES
+LOCAL_VENDOR_MODULE := true
+include $(BUILD_PREBUILT)
+
 endif

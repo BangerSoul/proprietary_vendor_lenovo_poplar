@@ -1,12 +1,12 @@
-# Proprietary Vendor Tree for Lenovo Tab M9 / Tab M11 (`poplar` / `TB311FU`)
+# Proprietary Vendor Tree for Lenovo Tab (`poplar` / `TB311FU`)
 
-This repository contains the prebuilt proprietary vendor binaries, firmware, kernel modules (`vendor_dlkm`), audio tuning parameters, and build makefiles for the **Lenovo TB311FU** (`poplar`), extracted directly from official factory firmware.
+This repository contains the prebuilt proprietary vendor binaries, firmware, kernel modules (`vendor_dlkm`), audio tuning parameters, and build makefiles for the **Lenovo Tab** (`TB311FU` / `poplar`), extracted directly from official factory firmware.
 
 ---
 
 ## Proprietary Blob Inventory
 
-- **Total Staged Blobs**: **473** proprietary files declared in `proprietary-files.txt` and staged under `proprietary/`.
+- **Total Staged Blobs**: **465** proprietary files declared in `proprietary-files.txt` and staged under `proprietary/` (device-customized rootdir/media/audio/VINTF configs are owned by `device/lenovo/poplar`).
 - **Extraction Source**: Official Lenovo RSA Stock ROM `TB311FU_ROW_OPEN_USER_M1457.5_W_ZUI_17.5.36.508_ST_261024` (`super.img` -> EROFS `vendor` and `vendor_dlkm` logical partitions).
 
 ### Subsystem Breakdown
