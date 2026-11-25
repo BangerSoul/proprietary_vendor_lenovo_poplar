@@ -427,7 +427,6 @@ PRODUCT_PACKAGES += \
     teei_daemon \
     init_thh \
     libteei_daemon_vfs \
-    android.hardware.thermal-service.mediatek.prebuilt \
     thermal_hal \
     thermal \
     thermal_manager \

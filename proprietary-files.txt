@@ -186,7 +186,6 @@ vendor/thh/ta/isee_model.json
 vendor_dlkm/lib/modules/widevine_driver.ko
 
 # Thermal, Power & Charging
--vendor/bin/hw/android.hardware.thermal-service.mediatek
 -vendor/lib/hw/thermal_hal.so
 -vendor/lib64/hw/thermal_hal.so
 -vendor/bin/thermal

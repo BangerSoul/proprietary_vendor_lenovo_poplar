@@ -986,18 +986,6 @@ LOCAL_VENDOR_MODULE := true
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
-LOCAL_MODULE := android.hardware.thermal-service.mediatek.prebuilt
-LOCAL_MODULE_OWNER := lenovo
-LOCAL_SRC_FILES := proprietary/vendor/bin/hw/android.hardware.thermal-service.mediatek
-LOCAL_MULTILIB := 64
-LOCAL_MODULE_TAGS := optional
-LOCAL_MODULE_CLASS := EXECUTABLES
-LOCAL_MODULE_RELATIVE_PATH := hw
-LOCAL_MODULE_STEM := android.hardware.thermal-service.mediatek
-LOCAL_VENDOR_MODULE := true
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
 LOCAL_MODULE := thermal_hal
 LOCAL_MODULE_OWNER := lenovo
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/hw/thermal_hal.so
