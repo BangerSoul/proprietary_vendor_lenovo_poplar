@@ -82,10 +82,7 @@ PRODUCT_COPY_FILES += \
     vendor/lenovo/poplar/proprietary/vendor_dlkm/lib/modules/MTK_INTERNAL_SPM.ko:$(TARGET_COPY_OUT_VENDOR_DLKM)/lib/modules/MTK_INTERNAL_SPM.ko \
     vendor/lenovo/poplar/proprietary/vendor_dlkm/lib/modules/Upower.ko:$(TARGET_COPY_OUT_VENDOR_DLKM)/lib/modules/Upower.ko \
     vendor/lenovo/poplar/proprietary/vendor/etc/init/hw/init.mt6768.usb.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.mt6768.usb.rc \
-    vendor/lenovo/poplar/proprietary/vendor/etc/init/hw/init.mt8786.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.mt8786.rc \
     vendor/lenovo/poplar/proprietary/vendor/etc/init/hw/init.sensor_1_0.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.sensor_1_0.rc \
-    vendor/lenovo/poplar/proprietary/vendor/etc/fstab.mt8786:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.mt8786 \
-    vendor/lenovo/poplar/proprietary/vendor/etc/permissions/handheld_core_hardware.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/handheld_core_hardware.xml \
     vendor/lenovo/poplar/proprietary/vendor/etc/audio_param/AudioParamOptions.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_param/AudioParamOptions.xml \
     vendor/lenovo/poplar/proprietary/vendor/etc/audio_param/AudioParamOptions_vext.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_param/AudioParamOptions_vext.xml \
     vendor/lenovo/poplar/proprietary/vendor/etc/audio_param/BtInfo_AudioParam.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_param/BtInfo_AudioParam.xml \
@@ -410,14 +407,12 @@ PRODUCT_PACKAGES += \
     libcamalgo.platform2 \
     libcamalgo.utility \
     libcamalgo.warp \
-    android.hardware.wifi-service-lazy \
     wmt_launcher \
     wmt_loader \
-    libwifi-hal \
+    libwifi-hal-mtk \
     android.hardware.bluetooth-service-mediatek \
     vendor.mediatek.hardware.bluetooth.audio@2.1-impl \
     vendor.mediatek.hardware.bluetooth.audio@2.2-impl \
-    android.hardware.bluetooth.audio@2.1-impl \
     libbluetooth_audio_session_aidl_mtk \
     libbluetooth_mtk \
     libbt-vendor \
@@ -425,16 +420,14 @@ PRODUCT_PACKAGES += \
     android.hardware.gnss-impl-mediatek \
     vendor.mediatek.hardware.gnss-impl \
     mnld \
-    android.hardware.sensors-service.multihal \
     android.hardware.sensors@2.X-subhal-mediatek \
     sensors.mt6768 \
-    sensors.dynamic_sensor_hal \
     librgbwlightsensor \
     com.google.android.widevine.nonupdatable \
     teei_daemon \
     init_thh \
     libteei_daemon_vfs \
-    android.hardware.thermal-service.mediatek \
+    android.hardware.thermal-service.mediatek.prebuilt \
     thermal_hal \
     thermal \
     thermal_manager \

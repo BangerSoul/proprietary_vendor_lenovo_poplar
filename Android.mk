@@ -764,17 +764,6 @@ LOCAL_VENDOR_MODULE := true
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
-LOCAL_MODULE := android.hardware.wifi-service-lazy
-LOCAL_MODULE_OWNER := lenovo
-LOCAL_SRC_FILES := proprietary/vendor/bin/hw/android.hardware.wifi-service-lazy
-LOCAL_MULTILIB := 64
-LOCAL_MODULE_TAGS := optional
-LOCAL_MODULE_CLASS := EXECUTABLES
-LOCAL_MODULE_RELATIVE_PATH := hw
-LOCAL_VENDOR_MODULE := true
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
 LOCAL_MODULE := wmt_launcher
 LOCAL_MODULE_OWNER := lenovo
 LOCAL_SRC_FILES := proprietary/vendor/bin/wmt_launcher
@@ -795,13 +784,14 @@ LOCAL_VENDOR_MODULE := true
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
-LOCAL_MODULE := libwifi-hal
+LOCAL_MODULE := libwifi-hal-mtk
 LOCAL_MODULE_OWNER := lenovo
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libwifi-hal.so
 LOCAL_MULTILIB := 64
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
 LOCAL_MODULE_SUFFIX := .so
+LOCAL_MODULE_STEM := libwifi-hal-mtk
 LOCAL_VENDOR_MODULE := true
 include $(BUILD_PREBUILT)
 
@@ -832,18 +822,6 @@ include $(CLEAR_VARS)
 LOCAL_MODULE := vendor.mediatek.hardware.bluetooth.audio@2.2-impl
 LOCAL_MODULE_OWNER := lenovo
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/hw/vendor.mediatek.hardware.bluetooth.audio@2.2-impl.so
-LOCAL_MULTILIB := 64
-LOCAL_MODULE_TAGS := optional
-LOCAL_MODULE_CLASS := SHARED_LIBRARIES
-LOCAL_MODULE_SUFFIX := .so
-LOCAL_MODULE_RELATIVE_PATH := hw
-LOCAL_VENDOR_MODULE := true
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE := android.hardware.bluetooth.audio@2.1-impl
-LOCAL_MODULE_OWNER := lenovo
-LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/hw/android.hardware.bluetooth.audio@2.1-impl.so
 LOCAL_MULTILIB := 64
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -931,17 +909,6 @@ LOCAL_VENDOR_MODULE := true
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
-LOCAL_MODULE := android.hardware.sensors-service.multihal
-LOCAL_MODULE_OWNER := lenovo
-LOCAL_SRC_FILES := proprietary/vendor/bin/hw/android.hardware.sensors-service.multihal
-LOCAL_MULTILIB := 64
-LOCAL_MODULE_TAGS := optional
-LOCAL_MODULE_CLASS := EXECUTABLES
-LOCAL_MODULE_RELATIVE_PATH := hw
-LOCAL_VENDOR_MODULE := true
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
 LOCAL_MODULE := android.hardware.sensors@2.X-subhal-mediatek
 LOCAL_MODULE_OWNER := lenovo
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/hw/android.hardware.sensors@2.X-subhal-mediatek.so
@@ -963,18 +930,6 @@ LOCAL_MODULE_CLASS := SHARED_LIBRARIES
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MODULE_RELATIVE_PATH := hw
 LOCAL_CHECK_ELF_FILES := false
-LOCAL_VENDOR_MODULE := true
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE := sensors.dynamic_sensor_hal
-LOCAL_MODULE_OWNER := lenovo
-LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/hw/sensors.dynamic_sensor_hal.so
-LOCAL_MULTILIB := 64
-LOCAL_MODULE_TAGS := optional
-LOCAL_MODULE_CLASS := SHARED_LIBRARIES
-LOCAL_MODULE_SUFFIX := .so
-LOCAL_MODULE_RELATIVE_PATH := hw
 LOCAL_VENDOR_MODULE := true
 include $(BUILD_PREBUILT)
 
@@ -1031,13 +986,14 @@ LOCAL_VENDOR_MODULE := true
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
-LOCAL_MODULE := android.hardware.thermal-service.mediatek
+LOCAL_MODULE := android.hardware.thermal-service.mediatek.prebuilt
 LOCAL_MODULE_OWNER := lenovo
 LOCAL_SRC_FILES := proprietary/vendor/bin/hw/android.hardware.thermal-service.mediatek
 LOCAL_MULTILIB := 64
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := EXECUTABLES
 LOCAL_MODULE_RELATIVE_PATH := hw
+LOCAL_MODULE_STEM := android.hardware.thermal-service.mediatek
 LOCAL_VENDOR_MODULE := true
 include $(BUILD_PREBUILT)
 

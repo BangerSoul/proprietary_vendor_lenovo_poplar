@@ -128,7 +128,6 @@ vendor_dlkm/lib/modules/ccu_isp4.ko
 vendor_dlkm/lib/modules/imgsensor_isp4_t.ko
 
 # Connectivity (Wi-Fi, Bluetooth & GNSS)
--vendor/bin/hw/android.hardware.wifi-service-lazy
 -vendor/bin/wmt_launcher
 -vendor/bin/wmt_loader
 vendor/firmware/WIFI_RAM_CODE_soc1_0_1a_1.bin
@@ -140,7 +139,6 @@ vendor_dlkm/lib/modules/wlan_drv_gen4m_6768.ko
 -vendor/bin/hw/android.hardware.bluetooth-service-mediatek
 -vendor/lib64/hw/vendor.mediatek.hardware.bluetooth.audio@2.1-impl.so
 -vendor/lib64/hw/vendor.mediatek.hardware.bluetooth.audio@2.2-impl.so
--vendor/lib64/hw/android.hardware.bluetooth.audio@2.1-impl.so
 -vendor/lib64/libbluetooth_audio_session_aidl_mtk.so
 -vendor/lib64/libbluetooth_mtk.so
 -vendor/lib64/libbt-vendor.so
@@ -153,10 +151,8 @@ vendor_dlkm/lib/modules/bt_drv_connac1x.ko
 vendor_dlkm/lib/modules/gps_drv_stp.ko
 
 # Sensors, Touchscreen & DRM (Widevine & Microtrust TEE)
--vendor/bin/hw/android.hardware.sensors-service.multihal
 -vendor/lib64/hw/android.hardware.sensors@2.X-subhal-mediatek.so
 -vendor/lib64/hw/sensors.mt6768.so;DISABLE_CHECKELF
--vendor/lib64/hw/sensors.dynamic_sensor_hal.so
 -vendor/lib64/librgbwlightsensor.so
 vendor_dlkm/lib/modules/sensorHub.ko
 vendor/firmware/Hx83102e_firmware.bin
@@ -223,10 +219,7 @@ vendor_dlkm/lib/modules/Upower.ko
 
 # Core Media Profiles, Codecs, Init & Fstabs
 vendor/etc/init/hw/init.mt6768.usb.rc
-vendor/etc/init/hw/init.mt8786.rc
 vendor/etc/init/hw/init.sensor_1_0.rc
-vendor/etc/fstab.mt8786
-vendor/etc/permissions/handheld_core_hardware.xml
 
 # Aurisys Audio Parameters (Profile 0)
 vendor/etc/audio_param/AudioParamOptions.xml
