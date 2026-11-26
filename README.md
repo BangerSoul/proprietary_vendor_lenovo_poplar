@@ -1,67 +1,43 @@
-# Proprietary Vendor Tree for Lenovo Tab (`poplar` / `TB311FU`)
+# Proprietary vendor tree for Lenovo Tab TB311FU (`poplar`)
 
-This repository contains the prebuilt proprietary vendor binaries, firmware, kernel modules (`vendor_dlkm`), audio tuning parameters, and build makefiles for the **Lenovo Tab** (`TB311FU` / `poplar`), extracted directly from official factory firmware.
+This repository provides proprietary Lenovo binaries and firmware used by the `device/lenovo/poplar` device tree for LineageOS 21.0. It is intended for the Lenovo Tab Wi-Fi, model `TB311FU` (`poplar` / `poplar_row_wifi`), on the MediaTek MT8786 / MT6768 platform.
 
----
+## Contents
 
-## Proprietary Blob Inventory
+The tree contains extracted vendor libraries, firmware, kernel modules for vendor_dlkm, audio tuning data, and generated Android makefiles. `proprietary-files.txt` is the source inventory; the proprietary payloads live under `proprietary/`. Device-specific configuration that belongs to the device tree is maintained separately.
 
-- **Total Staged Blobs**: **465** proprietary files declared in `proprietary-files.txt` and staged under `proprietary/` (device-customized rootdir/media/audio/VINTF configs are owned by `device/lenovo/poplar`).
-- **Extraction Source**: Official Lenovo RSA Stock ROM `TB311FU_ROW_OPEN_USER_M1457.5_W_ZUI_17.5.36.508_ST_261024` (`super.img` -> EROFS `vendor` and `vendor_dlkm` logical partitions).
+Blobs are based on the Lenovo stock firmware build `TB311FU_ROW_OPEN_USER_M1457.5_W_ZUI_17.5.36.508_ST_261024`. Do not assume blobs from another model, region, or firmware build are interchangeable.
 
-### Subsystem Breakdown
+## Integration
 
-| Subsystem | Key Assets & HALs |
-|---|---|
-| **Graphics & Display** | ARM Mali-G52 EGL/Vulkan (`libGLES_mali.so`, `vulkan.mali.so`), MT6768 Hardware Composer (`hwcomposer.mt6768.so`, `android.hardware.graphics.composer@3.3-service`), Gralloc / Allocator V2 / Mapper, PQ AIDL |
-| **Audio HAL & Smart PA** | `audio.primary.mt6768.so`, `android.hardware.audio.service-aidl.mediatek`, Awinic Smart PA (`aw883xx_acf.bin`, `snd-soc-aw883xx.ko`), Aurisys DSP (`audio_param/` & `audio_param_1/` XML profiles), `snd-soc-mt6768-afe.ko`, `snd-soc-mt6358.ko` |
-| **Camera & ISP 4.0T** | `camerahalserver`, `android.hardware.camera.provider@2.6-impl-mediatek.so`, 3A CCU firmware (`lib3a.ccu`), `camera_isp_4_t.ko`, `imgsensor_isp4_t.ko`, `libcamalgo.*.so` |
-| **Connectivity (Wi-Fi / BT / GNSS)** | Out-of-tree Wi-Fi module `wlan_drv_gen4m_6768.ko`, Wi-Fi/BT firmware (`WIFI_RAM_CODE_soc1_0_1a_1.bin`, `soc1_0_ram_*_hdr.bin`), `bt_drv_connac1x.ko`, `android.hardware.bluetooth-service-mediatek`, `gps_drv_stp.ko`, `mnld` |
-| **Sensors, Touch & DRM/TEE** | `sensors.mt6768.so`, `sensorHub.ko`, Himax/Jadard/Novatek touch firmware & modules (`hx83102e.ko`, `jd9366ts.ko`, `nt36523h.ko`), Microtrust TEE (`teei_daemon`, `.ta` trustlets), Google Widevine (`com.google.android.widevine.nonupdatable.apex`, `widevine_driver.ko`) |
-| **Thermal, Power & Charging** | `android.hardware.thermal-service.mediatek`, `vendor.mediatek.hardware.mtkpower-service.mediatek`, `CPU_DVFS.ko`, `MTK_INTERNAL_SPM.ko`, `Upower.ko`, `vendor.lenovo.hardware.battery-service`, `fuelgauged` |
-
----
-
-## Build Makefile Integration
-
-The vendor tree integrates directly with `device/lenovo/poplar`:
-
-- **`poplar-vendor.mk`**: Inherited by `device/lenovo/poplar/device.mk` via `$(call inherit-product, vendor/lenovo/poplar/poplar-vendor.mk)`. Configures `PRODUCT_COPY_FILES` (firmware, Aurisys XMLs, `.ko` modules to `$(TARGET_COPY_OUT_VENDOR_DLKM)`) and `PRODUCT_PACKAGES` (HAL binaries/libraries).
-- **`BoardConfigVendor.mk`**: Included by `device/lenovo/poplar/BoardConfig.mk`, sets `BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := erofs` and `BOARD_VENDOR_SEPOLICY_DIRS += vendor/lenovo/poplar/sepolicy/vendor`.
-- **`Android.mk` & `Android.bp`**: Declares the `vendor/lenovo/poplar` Soong namespace and prebuilt module guard for `TARGET_DEVICE == poplar`.
-
----
-
-## Re-Extracting Blobs & Regenerating Makefiles
-
-Both `extract-files.sh` and `setup-makefiles.sh` support standard LineageOS `tools/extract-utils` as well as standalone execution:
-
-```bash
-# Extract proprietary blobs from an unpacked stock ROM dump directory
-./extract-files.sh /path/to/unpacked_stock_dump
-
-# Regenerate poplar-vendor.mk, BoardConfigVendor.mk, Android.mk, Android.bp
-./setup-makefiles.sh
-```
-
-*(Note: Prebuilt binaries with vendor-private SONAMEs or symbols preserve `;DISABLE_CHECKELF` in `proprietary-files.txt` to ensure clean Soong ELF checks.)*
-
----
-
-## Copyright & License
-
-- **Build Makefiles, Scripts & Definitions**: Licensed under the **Apache License, Version 2.0** (`SPDX-License-Identifier: Apache-2.0`), Copyright (C) 2024-2026 The LineageOS Project.
-- **Proprietary Blobs (`proprietary/`)**: All binary firmware, shared libraries, kernel modules, and vendor configurations remain the copyrighted intellectual property of **Lenovo Group Ltd.**, **MediaTek Inc.**, **ARM Ltd.**, **Awinic Technology**, **Microtrust**, and **Google LLC**, extracted from stock factory firmware solely for device compatibility and personal LineageOS builds.
-
----
-
-## Repository & Integration
-
-- **Repository**: `https://github.com/BangerSoul/proprietary_vendor_lenovo_poplar`
-- **Remote (`origin`)**: `https://github.com/BangerSoul/proprietary_vendor_lenovo_poplar.git`
-- **Target Branch**: `lineage-21.0` (LineageOS 21.0)
-- **Device Tree**: `https://github.com/BangerSoul/android_device_lenovo_poplar`
+Place this repository at `vendor/lenovo/poplar` and use it with compatible device and kernel trees:
 
 ```bash
 git clone -b lineage-21.0 https://github.com/BangerSoul/proprietary_vendor_lenovo_poplar.git vendor/lenovo/poplar
 ```
+
+The device tree inherits `poplar-vendor.mk` and includes `BoardConfigVendor.mk`. Keep this vendor branch synchronized with the matching `lineage-21.0` device/kernel inputs. The device uses Android boot header v4 and carries recovery in `vendor_boot`; this vendor tree supplies blobs, not a standalone recovery image or recovery partition configuration.
+
+## Extracting and regenerating
+
+Use a compatible LineageOS `tools/extract-utils` checkout. Point extraction at a legally obtained, unpacked stock firmware dump, then regenerate the build files:
+
+```bash
+./extract-files.sh /path/to/unpacked_stock_dump
+./setup-makefiles.sh
+```
+
+Review changes to `proprietary-files.txt` and generated makefiles before committing. Do not publish or redistribute proprietary binaries unless you have the required rights.
+
+## Recovery development
+
+TWRP and OrangeFox build helpers are maintained in the device repository's [`recovery/twrp-orangefox` branch](https://github.com/BangerSoul/android_device_lenovo_poplar/tree/recovery/twrp-orangefox). Use vendor files only with a compatible recovery/Android base. Recovery builders target `vendorbootimage`; actual display, touch, partition, and decryption support must be validated on the device.
+
+## Licensing
+
+Build scripts, makefiles, and definitions are covered by their stated SPDX license headers. Proprietary firmware, binaries, and related Lenovo assets remain the property of their respective copyright holders and are not relicensed by this repository.
+
+## Repository
+
+- Device tree: [BangerSoul/android_device_lenovo_poplar](https://github.com/BangerSoul/android_device_lenovo_poplar)
+- Branch: `lineage-21.0`
